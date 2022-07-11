@@ -9,12 +9,13 @@ echo "------> Generating .profile.d file to generate google-credentials.json at 
 mkdir -p $BUILD_DIR/.profile.d
 #CREDENTIALS=$(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_*)
 BUNDLE=""
+$i=0
 for CREDENTIAL in ${ENV_DIR}/GOOGLE_CREDENTIALS_*; do
+    echo $((++i))
     TEMPORAL=$(cat ${CREDENTIAL})
-    BUNDLE+="echo ${TEMPORAL@Q} > /app/google-credentials.json;"
+    BUNDLE+="echo ${TEMPORAL@Q} > /app/$(cat ${ENV_DIR}/FILES_GOOGLE_CREDENTIALS_${i});"
 done
-FILES=($(cat ${ENV_DIR}/FILES_GOOGLE_CREDENTIALS_*))
 echo $BUNDLE
-echo $FILES
+
 #echo "echo ${CREDENTIALS@Q} > /app/google-credentials.json" > $BUILD_DIR/.profile.d/google-credentials.sh
 #chmod +x $BUILD_DIR/.profile.d/google-credentials.sh
