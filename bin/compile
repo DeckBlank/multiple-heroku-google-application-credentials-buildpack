@@ -8,7 +8,7 @@ ENV_DIR=${3:-}
 echo "------> Multiple Generating .profile.d file to generate google-credentials.json at startup "
 
 mkdir -p $BUILD_DIR/.profile.d
-CREDENTIALS=($(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_*))
+CREDENTIALS=$(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_*@Q)
 PATH=""
 echo $CREDENTIALS
 if [ -f ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH ]; then
