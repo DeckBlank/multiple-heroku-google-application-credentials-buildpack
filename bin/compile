@@ -9,6 +9,7 @@ echo "------> Multiple Generating .profile.d file to generate google-credentials
 
 mkdir -p $BUILD_DIR/.profile.d
 PATH=""
+ls -la $ENV_DIR
 FILES=$(cat ${ENV_DIR}/FILES_GOOGLE_CREDENTIALS_*)
 echo $FILES
 BUNDLE=""
