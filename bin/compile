@@ -10,11 +10,11 @@ echo "------> Multiple Generating .profile.d file to generate google-credentials
 mkdir -p $BUILD_DIR/.profile.d
 CREDENTIALS=($(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_*))
 PATH=""
+echo $CREDENTIALS
 if [ -f ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH ]; then
     PATH=$(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH)
 fi
 echo $PATH
-echo $CREDENTIALS
 #FILES=($(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_FILES_*))
 #BUNDLE=""
 #for ((i = 0; i < ${#CREDENTIALS[@]}; ++i)); do
