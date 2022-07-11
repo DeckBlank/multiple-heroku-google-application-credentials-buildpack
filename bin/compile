@@ -15,12 +15,12 @@ if [ ! -f ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH ]; then
 fi
 echo $PATH
 echo $BUNDLE
-FILES=($(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_FILES_*))
-BUNDLE=""
-for ((i = 0; i < ${#CREDENTIALS[@]}; ++i)); do
-     BUNDLE+="echo ${CREDENTIALS[$i]@Q} > /app/${PATH}/${FILES[$i]};"
-done
-
-
-echo BUNDLE > $BUILD_DIR/.profile.d/google-credentials.sh
-chmod +x $BUILD_DIR/.profile.d/google-credentials.sh
+#FILES=($(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_FILES_*))
+#BUNDLE=""
+#for ((i = 0; i < ${#CREDENTIALS[@]}; ++i)); do
+#     BUNDLE+="echo ${CREDENTIALS[$i]@Q} > /app/${PATH}/${FILES[$i]};"
+#done
+#
+#
+#echo BUNDLE > $BUILD_DIR/.profile.d/google-credentials.sh
+#chmod +x $BUILD_DIR/.profile.d/google-credentials.sh
