@@ -10,7 +10,7 @@ mkdir -p $BUILD_DIR/.profile.d
 #CREDENTIALS=$(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_*)
 BUNDLE=""
 for CREDENTIAL in ${ENV_DIR}/GOOGLE_CREDENTIALS_*; do
-    TEMPORAL=$(cat ${ENV_DIR}/${CREDENTIAL})
+    TEMPORAL=$(cat ${CREDENTIAL})
     BUNDLE+="echo ${TEMPORAL@Q} > /app/google-credentials.json;"
 done
 FILES=($(cat ${ENV_DIR}/FILES_GOOGLE_CREDENTIALS_*))
