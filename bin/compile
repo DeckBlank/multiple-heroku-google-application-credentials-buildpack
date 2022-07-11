@@ -14,7 +14,7 @@ i=0
 for CREDENTIAL in ${ENV_DIR}/GOOGLE_CREDENTIALS_*; do
     i=$((++i))
     TEMPORAL=$(cat ${CREDENTIAL})
-    BUNDLE+="echo ${TEMPORAL@Q} > /app/$(cat ${ENV_DIR}/${GOOGLE_PATH}/FILES_GOOGLE_CREDENTIALS_${i});"
+    BUNDLE+="echo ${TEMPORAL@Q} > /app/${GOOGLE_PATH}/$(cat ${ENV_DIR}/FILES_GOOGLE_CREDENTIALS_${i});"
 done
 echo $BUNDLE
 
