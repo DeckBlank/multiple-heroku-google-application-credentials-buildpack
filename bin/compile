@@ -10,11 +10,11 @@ echo "------> Generating .profile.d file to generate google-credentials.json at 
 mkdir -p $BUILD_DIR/.profile.d
 CREDENTIALS=($(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_*))
 PATH=""
-if [ ! -f ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH ]; then
+if [ -f ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH ]; then
     PATH=$(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH)
 fi
 echo $PATH
-echo $BUNDLE
+echo $CREDENTIALS
 #FILES=($(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_FILES_*))
 #BUNDLE=""
 #for ((i = 0; i < ${#CREDENTIALS[@]}; ++i)); do
