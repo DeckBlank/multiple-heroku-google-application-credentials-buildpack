@@ -13,7 +13,7 @@ PATH=""
 if [ ! -f ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH ]; then
     PATH=$(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_PATH)
 fi
-FILES=$(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_FILES_*)
+FILES=($(cat ${ENV_DIR}/GOOGLE_CREDENTIALS_FILES_*))
 BUNDLE=""
 for ((i = 0; i < ${#CREDENTIALS[@]}; ++i)); do
      BUNDLE+="echo ${CREDENTIALS[$i]@Q} > /app/${PATH}/${FILES[$i]};"
